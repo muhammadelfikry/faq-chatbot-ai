@@ -18,6 +18,10 @@ with open("prompt.txt", "r") as f:
 class ChatRequest(BaseModel):
     message: str
 
+@app.get("/")
+def root():
+    return {"message": "Hello World"}
+
 @app.post("/chat")
 def chat_bot(req: ChatRequest):
     try:
