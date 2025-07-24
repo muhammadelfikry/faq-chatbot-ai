@@ -32,4 +32,20 @@ function appendToChat(sender, message) {
 }
 
 /// add event listener to the button
-document.querySelector("button").addEventListener("click", sendMessage);
+document.querySelector(".send-message-button").addEventListener("click", sendMessage);
+
+document.getElementById("fab").addEventListener("click", () => {
+    const chatContainer = document.querySelector(".chat-container");
+    const fab = document.getElementById("fab");
+    
+    chatContainer.style.display = "block";
+    fab.style.display = "none";
+})
+
+document.querySelector(".minimize-chat").addEventListener("click", () => {
+    const chatContainer = document.querySelector(".chat-container");
+    const fab = document.getElementById("fab");
+    
+    chatContainer.style.display = "none";
+    fab.style.display = "block";
+})
