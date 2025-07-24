@@ -97,6 +97,7 @@
     border-radius: 50%;
     width: 56px;
     height: 56px;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
 }
 
 #fab:hover {
