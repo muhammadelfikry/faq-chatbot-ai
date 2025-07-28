@@ -25,7 +25,7 @@ function appendToChat(sender, message) {
     chatbox.innerHTML += `
         <div class="${className}">
             <span>${message}</span>
-            <div style="font-size: 0.6em; color: #888; margin-top: 4px; text-align: right;">${timestamp}</div>
+            <div style="font-size: 0.6em; color: #888; margin-top: 4px; text-align: right;">${sender} ${timestamp}</div>
         </div>
     `;
     chatbox.scrollTop = chatbox.scrollHeight;
