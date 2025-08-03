@@ -2,23 +2,16 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from groq import Groq
-from dotenv import load_dotenv
-import os
+from config import Config
+from middlewares import setup_middlewares
 
-load_dotenv()
+Config.validate()
 
-client = Groq(
-    api_key=os.getenv("GRQQ_API_KEY")
-)
+client = Groq(api_key=Config.GROQ_API_KEY)
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+setup_middlewares(app)
 
 with open("prompt.txt", "r") as f:
     prompt = f.read()
@@ -44,8 +37,9 @@ def chat_bot(req: ChatRequest):
                     "content": req.message,
                 }
             ],
-            model="llama-3.3-70b-versatile",
+            model=Config.GROQ_MODEL,
             temperature=0.5,
+            max_tokens=300
         )
 
         response_message = chat_completion.choices[0].message.content
