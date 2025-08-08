@@ -6,7 +6,7 @@ async function sendMessage() {
     appendToChat("User", message);
     input.value = "";
 
-    const res = await fetch("http://localhost:8000/chat", {
+    const res = await fetch("https://faq-chatbot-ai-el.vercel.app/chat", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
