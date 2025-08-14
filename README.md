@@ -2,7 +2,7 @@
 
 This chatbot is designed to automate responses to frequently asked questions (FAQ), thereby improving service speed and enhancing user experience. The chatbot interface is presented as a floating action button, allowing easy access at any time.
 
-This project is built using the LLaMA 3 LLM model with a cloud-hosted API approach, integrated via FastAPI as the backend service.
+This project is built using the LLaMA 3 LLM model with a cloud-hosted API approach, integrated via FastAPI as the backend service. To ensure the chatbot provides structured and context-aware responses, prompt engineering techniques were applied by combining Instructional Prompting and Few-Shot Prompting.
 
 ## 🚀 Features
 - Automated FAQ Response: Provides quick and accurate answers to frequently asked questions.
